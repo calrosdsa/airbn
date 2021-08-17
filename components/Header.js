@@ -98,14 +98,16 @@ function Header({placeholder}) {
     },[])
     useEffect(()=>{
       const inScroll= () => {
-        if(setInputFocus(false),
+        setInputFocus(false),
         setOpen(false)
-        ){
-          setScroll(false);
-        }else{
-          setScroll(false)
         }
-      };
+      window.addEventListener("scroll", inScroll);
+      return () => window.removeEventListener ("scroll", inScroll);
+    },[])
+    useEffect(()=>{
+      const inScroll= () => {
+        setVisible(false)
+        }
       window.addEventListener("scroll", inScroll);
       return () => window.removeEventListener ("scroll", inScroll);
     },[])
@@ -129,8 +131,8 @@ function Header({placeholder}) {
               onFocus={openDate}
               onChange={(e) => setLocation(e.target.value)}
             className={`text-black mx-auto pl-24 sm:pl-20 rounded-full h-14 sm:w-[500px] focus:outline-none transform-none
-            ${visible&& ' px-20 mt-3 '}
-            ${scrolled&& 'px-64  sm:w-full'}`}
+            ${visible&& ' px-20 mt-3  '}
+            ${scrolled&& ' w-full '}`}
             placeholder="Where are you going?"
             />
           {visible && (
@@ -251,7 +253,7 @@ function Header({placeholder}) {
           {inputFocus&&
        <form  className="absolute hidden md:inline-block top-1/2 mt-10 bg-white  rounded-full ">
        <div className={`absolute top-16 lg:top-14 lg:-mt-2  xL:top-16  left-1/2  -translate-x-1/2 -translate-y-1/2 transform transition-all
-        ${scroll&& 'hidden transition-all transform'} `}>
+         `}>
        <div className="flex   p-3 -mt-10 sm:divide-x-2  sm:divide-gray-400 space-x-3 rounded-full h-full bg-white ">
           <div className="px-1 lg:px-2 xl:px-3 md:w-[100px] md:text-sm lg:w-[130px] xl:w-[530px] 2xl:w-[650px] lg:text-sm xl:text-lg ">
            <label htmlFor="location">Location</label>
