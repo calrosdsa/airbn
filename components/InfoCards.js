@@ -2,11 +2,9 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useMediaQuery } from "@react-hook/media-query";
-
 // Import Swiper styles
 import "swiper/swiper.min.css";
 import "swiper/components/pagination/pagination.min.css"
-import "swiper/components/navigation/navigation.min.css"
 
 
 
@@ -32,7 +30,7 @@ export default function InfoCards({posts}) {
     }} pagination={{    
         "clickable": true
     }} navigation={isSmallScreen ?false:true} >
-    <div className="bg-gray-500 h-40 w-40">
+    <div className={`bg-gray-500 h-40 w-40 `}>
   {posts.map((post)=>( 
       <div className="flex mx-auto">
       <SwiperSlide className="justify-center">
@@ -54,10 +52,13 @@ export default function InfoCards({posts}) {
           <img className="h-[355px] w-[385px]" src={post.image[5].image} alt="" />
       </SwiperSlide>
       <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[7].image} alt="" />
+          <img className="h-[355px] w-[385px]" src={post.image[6].image} alt="" />
       </SwiperSlide>
       <SwiperSlide>
           <img className="h-[355px] w-[385px]" src={post.image[7].image} alt="" />
+      </SwiperSlide>
+      <SwiperSlide>
+          <img className="h-[355px] w-[385px]" src={post.image[8].image} alt="" />
       </SwiperSlide>
     </div>
 
@@ -67,4 +68,4 @@ export default function InfoCards({posts}) {
     </div>
 </div>
   )
-}
+}   
