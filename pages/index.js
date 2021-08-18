@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
+import InfoCards from '../components/InfoCards'
 
 export default function Home({posts}) {
   return (
@@ -11,6 +12,7 @@ export default function Home({posts}) {
       </Head>
       <Header/>
       <Banner/>
+      <InfoCards/>
       {posts.map((post)=>(
         <div>
           <h1>{post.title}</h1>

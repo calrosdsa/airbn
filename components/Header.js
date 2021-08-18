@@ -104,13 +104,6 @@ function Header({placeholder}) {
       window.addEventListener("scroll", inScroll);
       return () => window.removeEventListener ("scroll", inScroll);
     },[])
-    useEffect(()=>{
-      const inScroll= () => {
-        setVisible(false)
-        }
-      window.addEventListener("scroll", inScroll);
-      return () => window.removeEventListener ("scroll", inScroll);
-    },[])
     const closeScreen=()=>{
       setVisible(false)
     }
