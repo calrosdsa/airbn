@@ -12,7 +12,7 @@ export default function Home({posts}) {
       </Head>
       <Header/>
       <Banner/>
-      <InfoCards/>
+      <InfoCards posts={posts}/>
       {posts.map((post)=>(
         <div>
           <h1>{post.title}</h1>
