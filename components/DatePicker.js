@@ -1,7 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {DateRangePicker,DateRange} from 'react-date-range'
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
+import "react-date-range/dist/styles.css";  
 import NumberInput from './NumberInput';
 export default function DatePicker({
   close,
@@ -34,26 +33,31 @@ export default function DatePicker({
     onChange: handleSelect,
   };
     return (
-        <div className=" bg-white absolute w-[300px]  rounded-xl  mt-24 px-6 -top-10 md:top-80  md:left-1/2  md:-translate-x-1/2 md:-translate-y-1/2" >
+        <div className=" bg-white absolute w-[750px]  rounded-xl  mt-20 px-6 -top-10 md:top-96  md:left-1/2  md:-translate-x-1/2 md:-translate-y-1/2" >
           <div>
 
-            <h4 className="text-base font-bold text-red-400 my-3 mx-2">Pick Check-in & Check-out dates</h4>
+            <h4 className="text-base font-bold text-red-400  my-3 mx-2">Pick Check-in & Check-out dates</h4>
             <div className="">
-            <div className="md:hidden w-20">
+            <div className="md:hidden">
                 <DateRange {...options}/>
             </div>
-            <div className="hidden md:inline-block text-xl  ">
-                <DateRangePicker {...options}/>
+            <div className="hidden md:inline-block text-xl ">
+                <DateRangePicker
+                {...options}
+                className=""
+                months={2}
+              
+                />
             </div>
             <div className="my-5">
-            <h4 className="mx-40 mb-4 text-red-400 font-bold">Add guests</h4>
-          <div className="flex items-center mx-5 space-x-7" >
+            <h4 className=" text-red-400 font-bold mb-3">Add guests</h4>
+          <div className="flex items-center mx-5 space-x-7 py-2" >
             <NumberInput
               name="Adults"
               value={numberOfAdults.value}
               setValue={numberOfAdults.setValue}
               />
-            <NumberInput
+              <NumberInput
               name="Children"
               value={numberOfChildren.value}
               setValue={numberOfChildren.setValue}

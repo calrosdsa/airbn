@@ -24,47 +24,40 @@ export default function InfoCards({posts}) {
   
   return (
       <div className="grid grid-cols-2 px-3 w-full">
-    <div className="h-[355px] w-[385px] col-start-1">
+    <div className="h-[255px] w-[295px] col-start-1">
+  {posts.map((post)=>( 
     <Swiper  slidesPerView={1} spaceBetween={100} keyboard={{
         "enabled": true
     }} pagination={{    
         "clickable": true
     }} navigation={isSmallScreen ?false:true} >
-    <div className={`bg-gray-500 h-40 w-40 `}>
-  {posts.map((post)=>( 
-      <div className="flex mx-auto">
-      <SwiperSlide className="justify-center">
-          <img className="h-[355px] w-[385px]" src={post.image[0].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[1].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[2].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[3].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[4].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[5].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[6].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[7].image} alt="" />
-      </SwiperSlide>
-      <SwiperSlide>
-          <img className="h-[355px] w-[385px]" src={post.image[8].image} alt="" />
-      </SwiperSlide>
-    </div>
+      <div>
 
-))}
+      <div className="flex mx-auto z-10">
+      <SwiperSlide className="justify-center">
+          <img className="h-[255px] w-[295px]" src={post.image[0].image} alt="" />
+      </SwiperSlide>
+      <SwiperSlide className="justify-center">
+          <img className="h-[255px] w-[295px]" src={post.image[1].image} alt="" />
+      </SwiperSlide>
+      <SwiperSlide className="justify-center">
+          <img className="h-[255px] w-[295px]" src={post.image[2].image} alt="" />
+      </SwiperSlide>
+      <SwiperSlide className="justify-center">
+          <img className="h-[255px] w-[295px]" src={post.image[3].image} alt="" />
+      </SwiperSlide>
+      <SwiperSlide className="justify-center">
+          <img className="h-[255px] w-[295px]" src={post.image[4].image} alt="" />
+      </SwiperSlide>
+      <SwiperSlide className="justify-center">
+          <img className="h-[255px] w-[295px]" src={post.image[5].image} alt="" />
+      </SwiperSlide>
     </div>
+      <p>{post.title}</p>
+
+      </div>
   </Swiper>
+))}
     </div>
 </div>
   )
